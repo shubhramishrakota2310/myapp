@@ -67,6 +67,7 @@ class App extends React.Component {
           <form className="form-inline" layout="inline">
             <div className="input-group mb-2 mr-sm-2 mb-sm-0">
               <input
+                id="username"
                 type="text"
                 required
                 aria-required="true" //Ensures non-empty input.
@@ -74,6 +75,7 @@ class App extends React.Component {
                 placeholder="username"
                 value={this.state.name}
                 onChange={this.handleNameChange}
+                data-cy="new-name"
               />
 
               <input
@@ -84,6 +86,7 @@ class App extends React.Component {
                 placeholder="caption"
                 value={this.state.caption}
                 onChange={this.handleCaptionChange}
+                data-cy="new-caption"
               />
 
               <input
@@ -94,10 +97,11 @@ class App extends React.Component {
                 className="form-control"
                 placeholder="post"
                 onChange={this.Filevalidation}
+                data-cy="new-file"
               />
             </div>
 
-            <button type="submit" className="btn btn-primary">
+            <button type="submit" className="btn btn-primary" cy-data="submit">
               Save
             </button>
           </form>
